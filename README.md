@@ -34,7 +34,6 @@ This project uses **GitHub Actions** to automate the Docker build and push proce
 
 ```yaml
 name: Docker CI/CD Pipeline
-
 on:
   push:
     branches: [main]
@@ -75,4 +74,31 @@ markdown
 
 ```bash
 docker run -p 3000:3000 developerhub
+# Terraform Labs
 
+This project provisions and runs a simple Nginx-based Dockerized web application using Terraform.
+
+## Project Structure
+- **Dockerfile** – Builds an Nginx container serving a static HTML page.
+- **index.html** – Static web page content.
+- **main.tf** – Terraform configuration to build the image and run the container.
+- **providers.tf** – Specifies the Docker provider configuration.
+- **outputs.tf** – Prints the application URL after deployment.
+
+## Requirements
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+
+## Usage
+```bash
+# Initialize Terraform
+terraform init
+
+# Validate the configuration
+terraform validate
+
+# Plan and apply changes
+terraform plan -out=tfplan
+terraform apply "tfplan"
+
+---
