@@ -1,0 +1,12 @@
+.git
+.terraform
+.vscode
+.idea
+node_modules
+dist
+build
+bin
+obj
+__pycache__
+*.log
+tfplan
